@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:onClick="profileSettingActivity"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/buttonprofile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:onClick="profileSettingActivity"
+        android:text="Profile Setting"
+         />
+
+    <Button
+        android:id="@+id/btnapppermission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_below="@+id/buttonapplocker"
+        android:onClick="appsetusagepermissionActivity"
+        android:text="App Usage Permission"
+         />
+
+    <Button
+        android:id="@+id/buttonapplocker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_below="@+id/buttonprofile"
+        android:onClick="appprivacysettingActivity"
+        android:text="Set app privacy"
+         />
+
+    <Button
+        android:id="@+id/buttontimeslot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnapppermission"
+        android:layout_marginTop="2dp"
+        android:onClick="profileSettingActivity"
+        android:text="Set time slots"
+         />
+
+
+</RelativeLayout>

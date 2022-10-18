@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
 import android.graphics.drawable.Drawable;
@@ -51,6 +52,8 @@ public class app_privacy_setting extends AppCompatActivity {
     }
 
     public void getInstalledapps(){
+
+
         List<PackageInfo> packageInfos = getPackageManager().getInstalledPackages(0);
 
         // add to list of dataset
@@ -61,6 +64,11 @@ public class app_privacy_setting extends AppCompatActivity {
             String packname = packageInfos.get(i).packageName;
 
             appModelList.add( new appModel(name, icon, 0, packname));
+
+
+
+
+
 
         }
         adapter.notifyDataSetChanged();

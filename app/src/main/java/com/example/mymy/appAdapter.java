@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +18,7 @@ public class appAdapter extends RecyclerView.Adapter<appAdapter.adapter_design_b
 
     List<appModel> appModels = new ArrayList<>();
     Context con ;
+    List<String> lockedApps = new ArrayList<>();
 
     public appAdapter(List<appModel> appModels, Context con) {
         this.appModels = appModels;
@@ -44,7 +46,30 @@ public class appAdapter extends RecyclerView.Adapter<appAdapter.adapter_design_b
         }
         else{
             holder.appstatus.setImageResource(R.drawable.lock);
+            lockedApps.add(app.getPackagename());
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(app.getStatus()==0){
+                    app.setStatus(1);
+                    holder.appstatus.setImageResource(R.drawable.lock);
+                    Toast.makeText(con, app.getAppname()+" is locked!!", Toast.LENGTH_LONG).show();
+                    lockedApps.add(app.getPackagename());
+
+
+                }
+                else{
+                    app.setStatus(0);
+                    holder.appstatus.setImageResource(R.drawable.unlock);
+                    Toast.makeText(con, app.getAppname()+" is unlocked!!", Toast.LENGTH_LONG).show();
+                    lockedApps.remove(app.getPackagename());
+
+                }
+            }
+        });
 
     }
 

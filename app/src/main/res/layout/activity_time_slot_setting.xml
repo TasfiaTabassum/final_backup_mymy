@@ -1,45 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profile_setting"
-    android:background="@drawable/bg"
+    tools:context=".timeSlotSettingActivity"
     android:gravity="center"
+    android:onClick="profileSettingActivity"
+    android:background="@drawable/bg"
     >
 
     <Button
-        android:id="@+id/setprofile"
+        android:id="@+id/settimeslot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
 
-        android:text="Set account name and password"
+        android:text="Set time slot"
         android:backgroundTint="@color/bright_purple_pink"
         />
 
     <Button
-        android:id="@+id/setpatterpin"
+        android:id="@+id/setslotnotifsound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
+        android:layout_below="@+id/settimeslot"
 
-        android:text="Set pattern or pin"
-        android:layout_below="@+id/setnotifsetting"
+        android:text="Set notification sound"
         android:backgroundTint="@color/bright_purple_pink"
         />
 
     <Button
-        android:id="@+id/setnotifsetting"
+        android:id="@+id/showtimeslot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
+        android:layout_below="@+id/setslotnotifsound"
 
-        android:text="notification settings"
-        android:layout_below="@+id/setprofile"
+        android:text="Show all the time slots"
         android:backgroundTint="@color/bright_purple_pink"
         />
 
-  </RelativeLayout>
+
+
+</RelativeLayout>

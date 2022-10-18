@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="light_bright_purple_pink">#dc3180</color>
+    <color name="bright_purple_pink">#c9226f</color>
+    <color name="medium_purple_pink">#8f1658</color>
+    <color name="dark_purple_pink">#670c48</color>
+
+
 </resources>

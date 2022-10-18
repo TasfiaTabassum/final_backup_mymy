@@ -14,9 +14,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity<noHistory, name, label, excludeFromRecents, activity> extends AppCompatActivity {
 
-    Button btnapplocker , btnapppermission , buttonprofile ;
+    Button btnapplocker , btnapppermission , buttonprofile , btntimeslotsetting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btntimeslotsetting = findViewById(R.id.buttontimeslot);
+        btntimeslotsetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent objprofile = new Intent(MainActivity.this, timeSlotSettingActivity.class);
+                startActivity(objprofile);
+            }
+        });
 
         btnapplocker = findViewById(R.id.buttonapplocker);
         btnapplocker.setOnClickListener(new View.OnClickListener() {
@@ -70,13 +78,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void timeSlotSettingActivity(View view)
+    {
+
+
+    }
+
 
     private boolean isAccessGranted() {
         try {
             PackageManager packageManager = getPackageManager();
-            ApplicationInfo applicationInfo = packageManager.getApplicationInfo(getPackageName(), 0);
-            AppOpsManager appOpsManager = (AppOpsManager) getSystemService(Context.APP_OPS_SERVICE);
-            int mode = 0;
+            ApplicationInfo applicationInfo = packageManager.getApplicationInfo(getPackageName(),0);
+            AppOpsManager appOpsManager = null;
+            if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT)
+            {
+                appOpsManager = (AppOpsManager) getSystemService(Context.APP_OPS_SERVICE);
+            }
+            int mode = 0 ;
             if (android.os.Build.VERSION.SDK_INT > android.os.Build.VERSION_CODES.KITKAT) {
                 mode = appOpsManager.checkOpNoThrow(AppOpsManager.OPSTR_GET_USAGE_STATS,
                         applicationInfo.uid, applicationInfo.packageName);
@@ -87,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     }
-
 
 
 }

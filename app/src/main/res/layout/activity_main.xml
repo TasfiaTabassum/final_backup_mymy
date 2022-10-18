@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:onClick="profileSettingActivity"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/bg"
+    >
 
 
     <Button
@@ -16,6 +18,7 @@
         android:layout_marginTop="2dp"
         android:onClick="profileSettingActivity"
         android:text="Profile Setting"
+        android:backgroundTint="@color/bright_purple_pink"
          />
 
     <Button
@@ -26,6 +29,7 @@
         android:layout_below="@+id/buttonapplocker"
         android:onClick="appsetusagepermissionActivity"
         android:text="App Usage Permission"
+        android:backgroundTint="@color/bright_purple_pink"
          />
 
     <Button
@@ -36,6 +40,7 @@
         android:layout_below="@+id/buttonprofile"
         android:onClick="appprivacysettingActivity"
         android:text="Set app privacy"
+        android:backgroundTint="@color/bright_purple_pink"
          />
 
     <Button
@@ -44,9 +49,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnapppermission"
         android:layout_marginTop="2dp"
-        android:onClick="profileSettingActivity"
-        android:text="Set time slots"
-         />
+        android:backgroundTint="@color/bright_purple_pink"
+        android:onClick="btntimeslotsetting"
+        android:text="Time slot settings" />
 
 
 </RelativeLayout>

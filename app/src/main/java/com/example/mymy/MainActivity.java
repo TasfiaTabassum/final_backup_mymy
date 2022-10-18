@@ -14,15 +14,29 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity<noHistory, name, label, excludeFromRecents, activity> extends AppCompatActivity {
 
     Button btnapplocker , btnapppermission , buttonprofile , btntimeslotsetting;
+    Button signOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        signOut = findViewById(R.id.sign_out_btn);
+
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(MainActivity.this,logIn.class));
+
+            }
+        });
 
         btnapppermission = findViewById(R.id.btnapppermission);
         btnapppermission.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +65,7 @@ public class MainActivity<noHistory, name, label, excludeFromRecents, activity> 
             }
         });
 
-   }
+    }
 
     private void appprivacysettingActivity() {
         /*if(!isAccessGranted()){
@@ -59,9 +73,9 @@ public class MainActivity<noHistory, name, label, excludeFromRecents, activity> 
             Toast.makeText(MainActivity.this, "Sorry! First allow app usage permission" , Toast.LENGTH_LONG).show();
         }
         else {  */
-            Intent intentlock = new Intent( MainActivity.this , app_privacy_setting.class);
-            startActivity(intentlock);
-      //  }
+        Intent intentlock = new Intent( MainActivity.this , app_privacy_setting.class);
+        startActivity(intentlock);
+        //  }
 
     }
 

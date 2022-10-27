@@ -16,14 +16,15 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class logIn extends AppCompatActivity {
 
-    TextInputEditText eTemail;
-    TextInputEditText etPassword;
+    TextInputLayout eTemail;
+    TextInputLayout etPassword;
     Button bton;
     FirebaseAuth mAuth;
     FirebaseAuth user;
@@ -50,9 +51,9 @@ public class logIn extends AppCompatActivity {
             public void onClick(View view) {
                 progressDialog.setTitle("loging in");;
                 progressDialog.show();
-                String username = eTemail.getText().toString().trim();
+                String username = eTemail.getEditText().getText().toString().trim();
                 Log.i(TAG,"OnClick" + username);
-                String password = etPassword.getText().toString().trim();
+                String password = etPassword.getEditText().getText().toString().trim();
                 Log.i(TAG,"OnClick" + password);
 
                 mAuth.signInWithEmailAndPassword(username, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

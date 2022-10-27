@@ -6,6 +6,7 @@
     <string name="option3"> Set Up Privacy </string>
     <string name="option4"> Time Slot setting </string>
     <string name="option5"> Sign Out </string>
+    <string name="password">Password</string>
 
 
 </resources>

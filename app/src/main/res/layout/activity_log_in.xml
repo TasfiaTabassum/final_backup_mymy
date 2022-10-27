@@ -22,45 +22,57 @@
         android:textSize="35dp"
         android:textStyle="bold" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/email_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/signin"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
-        android:drawableLeft="@drawable/ic_baseline_email_24"
+        app:startIconDrawable="@drawable/ic_baseline_email_24"
+        app:startIconTint="@color/white"
         android:drawablePadding="20dp"
         android:inputType="textEmailAddress"
         android:hint="Email"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/white"
         android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textSize="18dp" />
+        android:textSize="18dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#30ffffff"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
 
-    <com.google.android.material.textfield.TextInputEditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/email_id"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
-        android:drawableLeft="@drawable/lock"
+        app:startIconDrawable="@drawable/ic_baseline_lock_24"
+        app:startIconTint="@color/white"
         android:drawablePadding="20dp"
-        android:drawableTint="@color/white"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="20dp"
+        android:inputType="textEmailAddress"
+        android:hint="@string/password"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/white"
+        android:padding="10dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textSize="18dp" />
+        android:textSize="18sp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#30ffffff"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginbtn"
@@ -74,8 +86,7 @@
         android:layout_marginBottom="20dp"
         android:onClick="goMainActivity"
         android:text="LOGIN"
-        android:backgroundTint="@color/bright_purple_pink"
-        />
+        android:backgroundTint="@color/bright_purple_pink" />
 
     <TextView
         android:id="@+id/forgotpass"
@@ -101,9 +112,7 @@
         android:orientation="horizontal"
         android:id="@+id/noid"
         android:layout_below="@+id/forgotpass"
-        android:layout_gravity="center"
-
-        >
+        android:layout_gravity="center">
 
         <TextView
             android:layout_width="wrap_content"

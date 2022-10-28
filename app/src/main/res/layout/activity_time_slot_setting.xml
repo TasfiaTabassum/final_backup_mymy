@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".timeSlotSettingActivity"
     android:gravity="center"
-    android:onClick="profileSettingActivity"
     android:background="@drawable/bg"
     >
 
@@ -26,7 +25,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:layout_below="@+id/settimeslot"
-
         android:text="Set notification sound"
         android:backgroundTint="@color/bright_purple_pink"
         />

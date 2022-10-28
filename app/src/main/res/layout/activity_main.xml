@@ -1,57 +1,255 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:onClick="profileSettingActivity"
-    tools:context=".MainActivity"
-    android:background="@drawable/bg"
-    >
+    android:background="@color/bright_purple_pink"
+    android:weightSum="2"
+    android:padding="5dp"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="50dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:clipToPadding="false"
+            android:layout_height="0dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/setting_cardview"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                app:cardCornerRadius="15dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:background="@drawable/background_black"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        app:tint="@color/white"
+                        android:src="@drawable/ic_baseline_settings_24"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/black"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="App \nSetting"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
 
 
-    <Button
-        android:id="@+id/buttonprofile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:onClick="profileSettingActivity"
-        android:text="Profile Setting"
-        android:backgroundTint="@color/bright_purple_pink"
-         />
 
-    <Button
-        android:id="@+id/btnapppermission"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_below="@+id/buttonapplocker"
-        android:onClick="appsetusagepermissionActivity"
-        android:text="App Usage Permission"
-        android:backgroundTint="@color/bright_purple_pink"
-         />
+                </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonapplocker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_below="@+id/buttonprofile"
-        android:onClick="appprivacysettingActivity"
-        android:text="Set app privacy"
-        android:backgroundTint="@color/bright_purple_pink"
-         />
+            </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/buttontimeslot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnapppermission"
-        android:layout_marginTop="2dp"
-        android:backgroundTint="@color/bright_purple_pink"
-        android:onClick="btntimeslotsetting"
-        android:text="Time slot settings" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/App_usage_permission"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                app:cardCornerRadius="15dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:background="@drawable/background_black"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        app:tint="@color/white"
+                        android:src="@drawable/ic_baseline_vpn_key_24"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/black"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textAlignment="center"
+                        android:text="App Usage Permission"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
 
 
-</RelativeLayout>
+
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:clipToPadding="false"
+            android:layout_height="0dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/set_up_privacy"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="10dp"
+                android:clickable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:background="@drawable/background_black"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        app:tint="@color/white"
+                        android:src="@drawable/ic_baseline_lock_24"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Set Up Privacy"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/time_slot_setting"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                app:cardCornerRadius="15dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:background="@drawable/background_black"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_baseline_access_time_24"
+                        app:tint="@color/white" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="Time Slot Setting"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
+
+
+
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight=".5"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:clipToPadding="false"
+            android:layout_height="0dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sign_out_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign Out"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:elevation="12dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+

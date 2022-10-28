@@ -27,6 +27,7 @@ public class profile_setting extends AppCompatActivity {
         setContentView(R.layout.activity_profile_setting);
 
 
+
         // calling the action bar
         ActionBar actionBar = getSupportActionBar();
 

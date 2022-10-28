@@ -21,12 +21,12 @@
         />
 
     <Button
-        android:id="@+id/setpatterpin"
+        android:id="@+id/setpin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
 
-        android:text="Set pattern or pin"
+        android:text="Set pin"
         android:layout_below="@+id/setnotifsetting"
         android:backgroundTint="@color/bright_purple_pink"
         />

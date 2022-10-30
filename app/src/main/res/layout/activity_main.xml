@@ -229,6 +229,116 @@
 
             </androidx.cardview.widget.CardView>
 
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:clipToPadding="false"
+            android:layout_height="0dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/setPin_cardview"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                app:cardCornerRadius="15dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:background="@drawable/background_black"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        app:tint="@color/white"
+                        android:src="@drawable/ic_baseline_update_24"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/black"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Set / Update \n Pin"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/showLockedApps_cardview"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                app:cardCornerRadius="15dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:background="@drawable/background_black"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        app:tint="@color/white"
+                        android:src="@drawable/ic_baseline_checklist_24"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/black"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Show Locked \n Apps"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
         </LinearLayout>
 
         <LinearLayout

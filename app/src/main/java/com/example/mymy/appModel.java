@@ -9,6 +9,7 @@ public class appModel {
     int status; //status is 0 then app is unlocked otherwise app is locked
     String packagename;
 
+
     public appModel(String appname, Drawable appicon, int status, String packagename) {
         this.appname = appname;
         this.appicon = appicon;

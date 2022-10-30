@@ -22,39 +22,55 @@
         android:textSize="35dp"
         android:textStyle="bold" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/username"
         android:layout_below="@id/signin"
-        android:background="#30ffffff"
-        android:hint="User name"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:textSize="18dp"
-        android:layout_margin="10dp"
-        android:padding="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="20dp"
-        />
+        android:hint="Email"
+        android:paddingHorizontal="20dp"
+        app:endIconMode="clear_text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="18dp">
 
-    <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#30ffffff"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/password"
-        android:layout_below="@id/username"
-        android:background="#30ffffff"
-        android:hint="Password"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:textSize="18dp"
-        android:layout_margin="10dp"
-        android:padding="20dp"
+        android:layout_below="@id/email_id"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:drawableLeft="@drawable/lock"
-        android:drawableTint="@color/white"
         android:drawablePadding="20dp"
+        android:drawableTint="@color/white"
+        android:hint="Password"
         android:inputType="textPassword"
-        />
+        android:paddingHorizontal="20dp"
+        app:endIconMode="password_toggle"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="18dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#30ffffff"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginbtn"

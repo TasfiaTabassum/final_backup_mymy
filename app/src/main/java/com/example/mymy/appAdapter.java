@@ -25,6 +25,7 @@ public class appAdapter extends RecyclerView.Adapter<appAdapter.adapter_design_b
         this.con = con;
     }
 
+
     @NonNull
     @Override
     public appAdapter.adapter_design_backend onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

@@ -41,6 +41,7 @@ public class app_privacy_setting extends AppCompatActivity {
             }
         });
 
+
     }
 
     @Override

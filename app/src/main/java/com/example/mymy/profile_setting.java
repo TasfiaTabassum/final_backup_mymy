@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.text.InputType;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,17 +17,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class profile_setting extends AppCompatActivity {
 
-    Button btnSetPin ;
+//    Button btnSetPin ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_setting);
 
-
+//        password = SharedPrefUtil.getInstance(this).getString(KEY);
+//        final Context context = this ;
 
         // calling the action bar
         ActionBar actionBar = getSupportActionBar();
@@ -34,16 +38,47 @@ public class profile_setting extends AppCompatActivity {
         // showing the back button in action bar
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        btnSetPin = findViewById(R.id.setpin);
-        btnSetPin.setOnClickListener((v) ->  {
+//        btnSetPin = findViewById(R.id.setPin_cardview);
 
+/*
+        if (password.isEmpty()) {
+            btnSetPin.setText("Password required");
+            setPassword(context);
+           // return;
+        }
+
+        if (password.contains(" ")) {
+            btnSetPin.setText("Don't support space");
+            setPassword(context);
+          //  return;
+        }
+
+        if (password.length() < 4 || password.length() >4) {
+            btnSetPin.setText("Only support 4 digit password");
+            setPassword(context);
+         //   return;
+        }
+
+        btnSetPin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(password.isEmpty()){
+                    setPassword(context);
+                }
+                else{
+                    UpdatePassword(context);
+                }
+
+            }
         });
+*/
 
 
 
     }
 
-    private void setPassword(Context context){
+    /*private void setPassword(Context context){
         AlertDialog.Builder dialog = new AlertDialog.Builder(context);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
@@ -55,7 +90,7 @@ public class profile_setting extends AppCompatActivity {
 
         EditText input = new EditText(context);
         input.setInputType(InputType.TYPE_CLASS_NUMBER);
-
+        //should we add test n stuff?? didn't add type class for text, instead added type class number on our own
         linearLayout.addView(input);
 
         dialog.setView(linearLayout);
@@ -63,17 +98,24 @@ public class profile_setting extends AppCompatActivity {
         dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                // save password
+                SharedPrefUtil.getInstance(context).putString(KEY , input.getText().toString());
+                Toast.makeText(context, "Password set successful!" , Toast.LENGTH_LONG).show();
 
+               // Toast.makeText(context, "Password set successful!" , Toast.LENGTH_LONG).show();
+                password = input.getText().toString();
+                btnSetPin.setText("Update password");
             }
         }).setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                // dialog.dismisss();
 
             }
         });
 
 
-        /*public void onClick(View v) {
+        *//*public void onClick(View v) {
             String password = passwordview.getText().toString();
 
             if (password.isEmpty()) {
@@ -91,17 +133,69 @@ public class profile_setting extends AppCompatActivity {
                 return;
             }
 
-         */
+         *//*
 
-
+        dialog.show();
 
     }
 
     private void UpdatePassword(Context context){
+        AlertDialog.Builder dialog = new AlertDialog.Builder(context);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
 
+        TextView t1 = new TextView(context);
+        t1.setText("Enter Your Previous Pin");
+
+        linearLayout.addView(t1);
+
+        EditText input = new EditText(context);
+        input.setInputType(InputType.TYPE_CLASS_NUMBER);
+
+        linearLayout.addView(input);
+
+
+        TextView t2 = new TextView(context);
+        t2.setText("Enter Your New Pin");
+
+        linearLayout.addView(t2);
+
+        EditText input2 = new EditText(context);
+        input.setInputType(InputType.TYPE_CLASS_NUMBER);
+
+        linearLayout.addView(input2);
+
+
+
+
+        dialog.setView(linearLayout);
+
+        dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // update password
+
+                if(password.equals(input.getText().toString())){
+                    SharedPrefUtil.getInstance(context).putString(KEY , input2.getText().toString());
+                    Toast.makeText(context, "Password update successful!" , Toast.LENGTH_LONG).show();
+
+                }
+                else {
+                    Toast.makeText(context, "Sorry previous password is incorrect" , Toast.LENGTH_LONG).show();
+                }
+
+            }
+        }).setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // dialog.dismisss();
+            }
+        });
+
+        dialog.show();
 
     }
-
+*/
 
 
 
@@ -119,3 +213,6 @@ public class profile_setting extends AppCompatActivity {
 
 
 }
+
+
+

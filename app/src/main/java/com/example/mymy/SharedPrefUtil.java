@@ -13,6 +13,7 @@ public class SharedPrefUtil {
     private SharedPreferences pref;
     private  SharedPreferences.Editor mEditor ;
 
+
     public SharedPrefUtil(Context context)
     {
         this.pref = context.getSharedPreferences(SHARED_APP_PREFERENCE_NAME, Context.MODE_PRIVATE);

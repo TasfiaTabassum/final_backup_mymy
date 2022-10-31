@@ -52,6 +52,8 @@ public class MainActivity<noHistory, name, label, excludeFromRecents, activity> 
 
 
 
+
+
         AppSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -355,4 +357,3 @@ public class MainActivity<noHistory, name, label, excludeFromRecents, activity> 
 
 
 
-    //      10.44 / 41.26 part 5

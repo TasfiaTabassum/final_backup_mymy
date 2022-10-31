@@ -8,13 +8,17 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class app_privacy_setting extends AppCompatActivity {
+
+    private Context context ;
 
     RecyclerView recyclerView ;
     List<appModel> appModelList = new ArrayList<>();
@@ -37,7 +41,7 @@ public class app_privacy_setting extends AppCompatActivity {
         progressDialog.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
             public void onShow(DialogInterface dialogInterface) {
-                getInstalledapps();
+                getInstalledapps(context);
             }
         });
 
@@ -52,10 +56,14 @@ public class app_privacy_setting extends AppCompatActivity {
         progressDialog.show();
     }
 
-    public void getInstalledapps(){
+    public void getInstalledapps(Context context){
 
+
+
+        List<String> list = SharedPrefUtil.getInstance(context).getListString();
 
         List<PackageInfo> packageInfos = getPackageManager().getInstalledPackages(0);
+
 
         // add to list of dataset
         for(int i = 0; i < packageInfos.size(); i++)
@@ -64,12 +72,22 @@ public class app_privacy_setting extends AppCompatActivity {
             Drawable icon = packageInfos.get(i).applicationInfo.loadIcon(getPackageManager());
             String packname = packageInfos.get(i).packageName;
 
-            appModelList.add( new appModel(name, icon, 0, packname));
+            //appModelList.add( new appModel(name, icon, 0, packname));
 
-
-
-
-
+            if(!list.isEmpty()){
+                if(list.contains(appModelList.get(i).packagename)){
+                    appModelList.add( new appModel(name, icon, 1, packname));
+                    Log.d("tasfia" , "list empty na r list contains packname, status 1 , ei kaj cholee");
+                }
+                else{
+                    appModelList.add( new appModel(name, icon, 0, packname));
+                    Log.d("tasfia" , "list empty na r list doesn't contain packname, ei kaj cholee");
+                }
+            }
+            else{
+                appModelList.add( new appModel(name, icon, 0, packname));
+                Log.d("tasfia" , "list empty r list doesn't contain packname, status 0 , ei kaj cholee");
+            }
 
         }
         adapter.notifyDataSetChanged();

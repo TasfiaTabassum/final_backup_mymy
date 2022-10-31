@@ -2,6 +2,8 @@ package com.example.mymy;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,15 +11,28 @@ import java.util.List;
 public class SharedPrefUtil {
 
     private  static  final String SHARED_APP_PREFERENCE_NAME = "SharedPref" ;
-    Context cxt;
+    //Context context;
     private SharedPreferences pref;
-    private  SharedPreferences.Editor mEditor ;
+    private SharedPreferences.Editor mEditor ;
 
 
     public SharedPrefUtil(Context context)
     {
         this.pref = context.getSharedPreferences(SHARED_APP_PREFERENCE_NAME, Context.MODE_PRIVATE);
     }
+
+   /* @Override
+    protected void onCreate(Context context)
+    {
+        super.onCreate(context);
+        //pref = this.getSharedPreferences(SHARED_APP_PREFERENCE_NAME,Context.MODE_PRIVATE);
+
+        pref= PreferenceManager.getDefaultSharedPreferences(this);
+
+    }*/
+
+
+
 
     public static SharedPrefUtil getInstance(Context context){
         return new SharedPrefUtil(context);

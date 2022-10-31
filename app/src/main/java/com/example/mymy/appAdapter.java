@@ -17,12 +17,13 @@ import java.util.List;
 public class appAdapter extends RecyclerView.Adapter<appAdapter.adapter_design_backend> {
 
     List<appModel> appModels = new ArrayList<>();
-    Context con ;
+    Context context ;
     List<String> lockedApps = new ArrayList<>();
 
-    public appAdapter(List<appModel> appModels, Context con) {
+    public appAdapter(List<appModel> appModels, Context context) {
         this.appModels = appModels;
-        this.con = con;
+        this.context = context;
+
     }
 
 
@@ -30,7 +31,7 @@ public class appAdapter extends RecyclerView.Adapter<appAdapter.adapter_design_b
     @Override
     public appAdapter.adapter_design_backend onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(con).inflate(R.layout.adapter_design, parent, false) ;
+        View view = LayoutInflater.from(context).inflate(R.layout.adapter_design, parent, false) ;
         adapter_design_backend design = new adapter_design_backend(view);
         return design;
     }
@@ -57,16 +58,19 @@ public class appAdapter extends RecyclerView.Adapter<appAdapter.adapter_design_b
                 if(app.getStatus()==0){
                     app.setStatus(1);
                     holder.appstatus.setImageResource(R.drawable.lock);
-                    Toast.makeText(con, app.getAppname()+" is locked!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, app.getAppname()+" is locked!!", Toast.LENGTH_LONG).show();
                     lockedApps.add(app.getPackagename());
 
+                    SharedPrefUtil.getInstance(context).putListString(lockedApps);
 
                 }
                 else{
                     app.setStatus(0);
                     holder.appstatus.setImageResource(R.drawable.unlock);
-                    Toast.makeText(con, app.getAppname()+" is unlocked!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, app.getAppname()+" is unlocked!!", Toast.LENGTH_LONG).show();
                     lockedApps.remove(app.getPackagename());
+
+                    SharedPrefUtil.getInstance(context).putListString(lockedApps);
 
                 }
             }
@@ -76,6 +80,7 @@ public class appAdapter extends RecyclerView.Adapter<appAdapter.adapter_design_b
 
     @Override
     public int getItemCount() {
+
         return appModels.size();
     }
 

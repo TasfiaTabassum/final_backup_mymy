@@ -4,11 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -42,6 +44,8 @@ public class appAdapter extends RecyclerView.Adapter<appAdapter.adapter_design_b
         appModel app = appModels.get(position);
         holder.appname.setText(app.getAppname());
         holder.appicon.setImageDrawable(app.getAppicon());
+
+       holder.cardView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.anim_one));
 
         if(app.getStatus() == 0){
             holder.appstatus.setImageResource(R.drawable.unlock);
@@ -88,9 +92,14 @@ public class appAdapter extends RecyclerView.Adapter<appAdapter.adapter_design_b
 
         TextView appname;
         ImageView appicon , appstatus ;
+        CardView cardView ;
 
         public adapter_design_backend(@NonNull View itemView) {
             super(itemView);
+
+
+            cardView = itemView.findViewById(R.id.eachCardView);
+
 
             appname = itemView.findViewById(R.id.appname);
             appicon = itemView.findViewById(R.id.appicon);

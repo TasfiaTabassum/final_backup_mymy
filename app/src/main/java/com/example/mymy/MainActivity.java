@@ -1,5 +1,6 @@
 package com.example.mymy;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -16,6 +17,8 @@ import android.provider.Settings;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -27,13 +30,15 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity<noHistory, name, label, excludeFromRecents, activity> extends AppCompatActivity {
 
-    private CardView AppSetting,AppUsagePermission,SetUpPrivacy,TimeSlotSetting , SetUpdatePin;
+    private CardView AppSetting,AppUsagePermission,SetUpPrivacy,TimeSlotSetting , SetUpdatePin , ShowLockedApps ;
     Button btnapplocker , btnapppermission , buttonprofile , btntimeslotsetting;
     Button signOut;
 
     Button btnSetPin ;
     String password ;
     static final String KEY = "pass" ;
+
+    Animation a1, a2 , a3 , a4 , a5 , a6 ;
 
 
     @Override
@@ -49,8 +54,24 @@ public class MainActivity<noHistory, name, label, excludeFromRecents, activity> 
         SetUpPrivacy = findViewById(R.id.set_up_privacy);
         TimeSlotSetting = findViewById(R.id.time_slot_setting);
         signOut = findViewById(R.id.sign_out_btn);
+        ShowLockedApps = findViewById(R.id.showLockedApps_cardview);
+        SetUpdatePin = findViewById(R.id.setPin_cardview);
+
+        a1 = AnimationUtils.loadAnimation(this , R.anim.anime_1) ;
+        a2 = AnimationUtils.loadAnimation(this , R.anim.anime_2) ;
+        a3 = AnimationUtils.loadAnimation(this , R.anim.anime_3) ;
+        a4 = AnimationUtils.loadAnimation(this , R.anim.anime_4) ;
+        a5 = AnimationUtils.loadAnimation(this , R.anim.anime_5) ;
+        a6 = AnimationUtils.loadAnimation(this , R.anim.anime_6) ;
 
 
+
+        AppSetting.setAnimation(a1);
+        AppUsagePermission.setAnimation(a3);
+        SetUpPrivacy.setAnimation(a3);
+        SetUpdatePin.setAnimation(a1);
+        TimeSlotSetting.setAnimation(a1);
+        ShowLockedApps.setAnimation(a3);
 
 
 
@@ -80,6 +101,20 @@ public class MainActivity<noHistory, name, label, excludeFromRecents, activity> 
 
             }
         });
+
+
+
+        ShowLockedApps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,Locked_app_list_activity.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+
 
         TimeSlotSetting.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,7 +175,7 @@ public class MainActivity<noHistory, name, label, excludeFromRecents, activity> 
 
         */
 
-        SetUpdatePin = findViewById(R.id.setPin_cardview);
+
         SetUpdatePin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -161,6 +196,71 @@ public class MainActivity<noHistory, name, label, excludeFromRecents, activity> 
 
 
     }
+
+
+
+
+
+   /* @Override
+    public void onBindViewHolder(@NonNull appAdapter.adapter_design_backend holder, int position) {
+
+       *//* appModel app = appModels.get(position);
+        holder.appname.setText(app.getAppname());
+        holder.appicon.setImageDrawable(app.getAppicon());
+
+        AppSetting,AppUsagePermission,SetUpPrivacy,TimeSlotSetting , SetUpdatePin , ShowLockedApps ;
+
+        *//*
+
+
+        holder.AppSetting.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.anim_one));
+        holder.AppUsagePermission.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.anim_one));
+        holder.SetUpPrivacy.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.anim_one));
+        holder.TimeSlotSetting.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.anim_one));
+        holder.SetUpdatePin.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.anim_one));
+        holder.ShowLockedApps.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.anim_one));
+
+
+
+        *//*if(app.getStatus() == 0){
+            holder.appstatus.setImageResource(R.drawable.unlock);
+        }
+        else{
+            holder.appstatus.setImageResource(R.drawable.lock);
+            lockedApps.add(app.getPackagename());
+        }*//*
+
+        *//*holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(app.getStatus()==0){
+                    app.setStatus(1);
+                    holder.appstatus.setImageResource(R.drawable.lock);
+                    Toast.makeText(context, app.getAppname()+" is locked!!", Toast.LENGTH_LONG).show();
+                    lockedApps.add(app.getPackagename());
+
+                    SharedPrefUtil.getInstance(context).putListString(lockedApps);
+
+                }
+                else{
+                    app.setStatus(0);
+                    holder.appstatus.setImageResource(R.drawable.unlock);
+                    Toast.makeText(context, app.getAppname()+" is unlocked!!", Toast.LENGTH_LONG).show();
+                    lockedApps.remove(app.getPackagename());
+
+                    SharedPrefUtil.getInstance(context).putListString(lockedApps);
+
+                }
+            }
+        });*//*
+
+    }*/
+
+
+
+
+
 
     private void setPassword(Context context){
         AlertDialog.Builder dialog = new AlertDialog.Builder(context);
@@ -186,13 +286,25 @@ public class MainActivity<noHistory, name, label, excludeFromRecents, activity> 
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 // save password
-                SharedPrefUtil.getInstance(context).putString(KEY , input.getText().toString());
-                Log.d("tasfia" , "set pin kaj kore ki ei khane ashe?" );
-                Toast.makeText(context, "Password set successful!" , Toast.LENGTH_LONG).show();
+                System.out.println(input.getText().toString());
+                if(input.getText().toString().length()>4)
+                {
+                    System.out.println("More than 4");
 
-                // Toast.makeText(context, "Password set successful!" , Toast.LENGTH_LONG).show();
-                password = input.getText().toString();
-                //btnSetPin.setText("Update password");
+                    Toast.makeText(context, "Password can't be more than 4 digits" , Toast.LENGTH_LONG).show();
+                }
+                else{
+                    SharedPrefUtil.getInstance(context).putString(KEY , input.getText().toString());
+                    Log.d("tasfia" , "set pin kaj kore ki ei khane ashe?" );
+                    Toast.makeText(context, "Password set successful!" , Toast.LENGTH_LONG).show();
+
+                    // Toast.makeText(context, "Password set successful!" , Toast.LENGTH_LONG).show();
+                    password = input.getText().toString();
+                    //btnSetPin.setText("Update password");
+                }
+
+
+
             }
         }).setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
             @Override
@@ -269,9 +381,14 @@ public class MainActivity<noHistory, name, label, excludeFromRecents, activity> 
                 // update password
 
                 if(password.equals(input.getText().toString())){
-                    SharedPrefUtil.getInstance(context).putString(KEY , input2.getText().toString());
-                    Toast.makeText(context, "Pin update successful!" , Toast.LENGTH_LONG).show();
-
+                    if(input2.getText().toString().length()>4)
+                    {
+                        Toast.makeText(context, "Password can't be more than 4 digits" , Toast.LENGTH_LONG).show();
+                    }
+                    else{
+                        SharedPrefUtil.getInstance(context).putString(KEY , input2.getText().toString());
+                        Toast.makeText(context, "Pin update successful!" , Toast.LENGTH_LONG).show();
+                    }
                 }
                 else {
                     Toast.makeText(context, "Sorry old pin is incorrect" , Toast.LENGTH_LONG).show();

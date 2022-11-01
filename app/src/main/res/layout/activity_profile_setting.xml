@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -11,36 +11,165 @@
     >
 
 
-    <Button
-        android:id="@+id/setprofile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
 
-        android:text="Set account name and password"
-        android:backgroundTint="@color/bright_purple_pink"
-        />
+        android:layout_margin="30dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:clipToPadding="false"
+            android:layout_height="0dp">
 
-    <Button
-        android:id="@+id/setpin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+            <androidx.cardview.widget.CardView
 
-        android:text="Set pin"
-        android:layout_below="@+id/setnotifsetting"
-        android:backgroundTint="@color/bright_purple_pink"
-        />
+                android:foreground="?attr/selectableItemBackground"
 
-    <Button
-        android:id="@+id/setnotifsetting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+                android:id="@+id/account_setting_cardview"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                app:cardCornerRadius="15dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:backgroundTint="@color/White_semiTransparentColor"
+                android:elevation="10dp"
+                android:layout_gravity="center"
+                >
 
-        android:text="notification settings"
-        android:layout_below="@+id/setprofile"
-        android:backgroundTint="@color/bright_purple_pink"
-        />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/White_semiTransparentColor"
+                    android:elevation="5dp"
+                    >
 
-  </RelativeLayout>
+                    <ImageView
+                        android:background="@drawable/background_black"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        app:tint="@color/white"
+                        android:backgroundTint="@color/dark_purple_pink"
+                        android:src="@drawable/ic_baseline_account_circle_24"
+                        android:elevation="5dp"
+                        />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/dark_purple_pink"
+
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Account Settings"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:elevation="5dp"
+                        />
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:clipToPadding="false"
+            android:layout_height="0dp">
+
+            <androidx.cardview.widget.CardView
+
+                android:foreground="?attr/selectableItemBackground"
+
+                android:id="@+id/notification_setting_cardview"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                app:cardCornerRadius="15dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:backgroundTint="@color/White_semiTransparentColor"
+                android:elevation="10dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/White_semiTransparentColor"
+                    android:elevation="5dp"
+                    >
+
+                    <ImageView
+                        android:background="@drawable/background_black"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        app:tint="@color/white"
+                        android:src="@drawable/ic_baseline_edit_notifications_24"
+                        android:backgroundTint="@color/dark_purple_pink"
+                        android:elevation="5dp"
+                        />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/black"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Notification Settings"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:elevation="5dp"
+                        />
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

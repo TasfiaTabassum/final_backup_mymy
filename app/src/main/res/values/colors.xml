@@ -14,5 +14,9 @@
     <color name="medium_purple_pink">#8f1658</color>
     <color name="dark_purple_pink">#670c48</color>
 
+    <color name="White_semiTransparentColor">#40FFFFFF</color>
+    <color name="light_bright_purple_pink_semiTransparentColor">#40dc3180</color>
+    <color name="bright_purple_pink_semiTransparentColor">#40c9226f</color>
+
 
 </resources>

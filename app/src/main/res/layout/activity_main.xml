@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bright_purple_pink"
+    android:background="@drawable/bg"
     android:weightSum="2"
     android:padding="5dp"
     android:layout_gravity="center"
@@ -14,7 +14,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="50dp"
+
+        android:layout_margin="30dp"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,20 +26,29 @@
             android:layout_height="0dp">
 
             <androidx.cardview.widget.CardView
+
+                android:foreground="?attr/selectableItemBackground"
+
                 android:id="@+id/setting_cardview"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 app:cardCornerRadius="15dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:clickable="true">
+                android:clickable="true"
+                android:backgroundTint="@color/White_semiTransparentColor"
+                android:elevation="10dp"
+                android:layout_gravity="center"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@color/white">
+                    android:background="@color/White_semiTransparentColor"
+                    android:elevation="5dp"
+                    >
 
                     <ImageView
                         android:background="@drawable/background_black"
@@ -47,14 +57,19 @@
                         android:padding="10dp"
                         android:layout_gravity="center"
                         app:tint="@color/white"
-                        android:src="@drawable/ic_baseline_settings_24"/>
+                        android:backgroundTint="@color/dark_purple_pink"
+                        android:src="@drawable/ic_baseline_settings_24"
+                        android:elevation="5dp"
+                        />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_margin="10dp"
-                        android:background="@color/black"
-                        android:layout_gravity="center"/>
+                        android:background="@color/dark_purple_pink"
+
+
+                        />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -64,7 +79,9 @@
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:elevation="5dp"
+                        />
 
 
 
@@ -73,20 +90,28 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+
+                android:foreground="?attr/selectableItemBackground"
+
                 android:id="@+id/App_usage_permission"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 app:cardCornerRadius="15dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:clickable="true">
+                android:clickable="true"
+                android:backgroundTint="@color/White_semiTransparentColor"
+                android:elevation="10dp"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@color/white"
-                    android:gravity="center">
+                    android:background="@color/White_semiTransparentColor"
+                    android:gravity="center"
+                    android:elevation="5dp"
+                    >
 
                     <ImageView
                         android:background="@drawable/background_black"
@@ -95,14 +120,17 @@
                         android:padding="10dp"
                         android:layout_gravity="center"
                         app:tint="@color/white"
-                        android:src="@drawable/ic_baseline_vpn_key_24"/>
+                        android:src="@drawable/ic_baseline_vpn_key_24"
+                        android:backgroundTint="@color/dark_purple_pink"
+                        android:elevation="5dp"
+                        />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_margin="10dp"
                         android:background="@color/black"
-                        android:layout_gravity="center"/>
+                        />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -113,7 +141,9 @@
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:elevation="5dp"
+                        />
 
 
 
@@ -133,20 +163,29 @@
             android:layout_height="0dp">
 
             <androidx.cardview.widget.CardView
+
+                android:foreground="?attr/selectableItemBackground"
+
                 android:id="@+id/set_up_privacy"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:cardCornerRadius="15dp"
                 android:layout_margin="10dp"
-                android:clickable="true">
+                android:clickable="true"
+                android:backgroundTint="@color/White_semiTransparentColor"
+                android:elevation="10dp"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@color/white"
-                    android:gravity="center">
+                    android:background="@color/White_semiTransparentColor"
+                    android:gravity="center"
+                    android:elevation="5dp"
+
+                    >
 
                     <ImageView
                         android:background="@drawable/background_black"
@@ -155,7 +194,10 @@
                         android:padding="10dp"
                         android:layout_gravity="center"
                         app:tint="@color/white"
-                        android:src="@drawable/ic_baseline_lock_24"/>
+                        android:src="@drawable/ic_baseline_lock_24"
+                        android:backgroundTint="@color/dark_purple_pink"
+                        android:elevation="5dp"
+                        />
 
                     <View
                         android:layout_width="match_parent"
@@ -167,11 +209,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Set Up Privacy"
+                        android:text="Set Up App \nPrivacy"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:elevation="5dp"
+                        />
 
 
 
@@ -180,20 +224,28 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+
+                android:foreground="?attr/selectableItemBackground"
+
                 android:id="@+id/time_slot_setting"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 app:cardCornerRadius="15dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:clickable="true">
+                android:clickable="true"
+                android:backgroundTint="@color/White_semiTransparentColor"
+                android:elevation="10dp"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@color/white"
-                    android:gravity="center">
+                    android:background="@color/White_semiTransparentColor"
+                    android:gravity="center"
+                    android:elevation="5dp"
+                    >
 
                     <ImageView
                         android:background="@drawable/background_black"
@@ -202,7 +254,10 @@
                         android:padding="10dp"
                         android:layout_gravity="center"
                         android:src="@drawable/ic_baseline_access_time_24"
-                        app:tint="@color/white" />
+                        app:tint="@color/white"
+                        android:backgroundTint="@color/dark_purple_pink"
+                        android:elevation="5dp"
+                        />
 
                     <View
                         android:layout_width="match_parent"
@@ -215,11 +270,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:gravity="center"
-                        android:text="Time Slot Setting"
+                        android:text="Time Slot \nSetting"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:elevation="5dp"
+                        />
 
 
 
@@ -243,20 +300,28 @@
             android:layout_height="0dp">
 
             <androidx.cardview.widget.CardView
+
+                android:foreground="?attr/selectableItemBackground"
+
                 android:id="@+id/setPin_cardview"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 app:cardCornerRadius="15dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:clickable="true">
+                android:clickable="true"
+                android:backgroundTint="@color/White_semiTransparentColor"
+                android:elevation="10dp"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@color/white">
+                    android:background="@color/White_semiTransparentColor"
+                    android:elevation="5dp"
+                    >
 
                     <ImageView
                         android:background="@drawable/background_black"
@@ -265,14 +330,17 @@
                         android:padding="10dp"
                         android:layout_gravity="center"
                         app:tint="@color/white"
-                        android:src="@drawable/ic_baseline_update_24"/>
+                        android:src="@drawable/ic_baseline_update_24"
+                        android:backgroundTint="@color/dark_purple_pink"
+                        android:elevation="5dp"
+                        />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_margin="10dp"
                         android:background="@color/black"
-                        android:layout_gravity="center"/>
+                        />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -282,7 +350,9 @@
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:elevation="5dp"
+                        />
 
 
 
@@ -291,20 +361,28 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+
+                android:foreground="?attr/selectableItemBackground"
+
                 android:id="@+id/showLockedApps_cardview"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 app:cardCornerRadius="15dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:clickable="true">
+                android:clickable="true"
+                android:backgroundTint="@color/White_semiTransparentColor"
+                android:elevation="10dp"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@color/white">
+                    android:background="@color/White_semiTransparentColor"
+                    android:elevation="5dp"
+                    >
 
                     <ImageView
                         android:background="@drawable/background_black"
@@ -313,14 +391,17 @@
                         android:padding="10dp"
                         android:layout_gravity="center"
                         app:tint="@color/white"
-                        android:src="@drawable/ic_baseline_checklist_24"/>
+                        android:src="@drawable/ic_baseline_checklist_24"
+                        android:backgroundTint="@color/dark_purple_pink"
+                        android:elevation="5dp"
+                        />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_margin="10dp"
                         android:background="@color/black"
-                        android:layout_gravity="center"/>
+                        />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -330,7 +411,9 @@
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:elevation="5dp"
+                        />
 
 
 
@@ -354,9 +437,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Sign Out"
-                android:background="@color/black"
+                android:background="@color/bright_purple_pink"
                 android:textColor="@color/white"
-                android:elevation="12dp"/>
+                android:elevation="12dp"
+                />
 
         </LinearLayout>
 

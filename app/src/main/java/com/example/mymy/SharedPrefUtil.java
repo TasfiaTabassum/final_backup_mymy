@@ -11,7 +11,7 @@ import java.util.List;
 public class SharedPrefUtil {
 
     private  static  final String SHARED_APP_PREFERENCE_NAME = "SharedPref" ;
-    //Context context;
+    Context context;
     private SharedPreferences pref;
     private SharedPreferences.Editor mEditor ;
 
@@ -19,6 +19,8 @@ public class SharedPrefUtil {
     public SharedPrefUtil(Context context)
     {
         this.pref = context.getSharedPreferences(SHARED_APP_PREFERENCE_NAME, Context.MODE_PRIVATE);
+       //this.pref = this.getApplicationonContext().getSharedPreferences(SHARED_APP_PREFERENCE_NAME, Context.MODE_PRIVATE);
+       // this.pref = context.getSharedPreferences(SHARED_APP_PREFERENCE_NAME, Context.MODE_PRIVATE);
     }
 
    /* @Override

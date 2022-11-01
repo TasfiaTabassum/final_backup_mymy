@@ -10,36 +10,23 @@
     >
 
 
-    <Button
-        android:id="@+id/settimeslot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+    <ImageView
+        android:id="@+id/time_setting_exclaimation_mark"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/time_setting_exclaimation_mark"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/white"
 
-        android:text="Set time slot"
-        android:backgroundTint="@color/bright_purple_pink"
         />
 
-    <Button
-        android:id="@+id/setslotnotifsound"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_below="@+id/settimeslot"
-        android:text="Set notification sound"
-        android:backgroundTint="@color/bright_purple_pink"
-        />
+    <pl.droidsonroids.gif.GifImageView
+    android:layout_width="350dp"
+    android:layout_height="400dp"
+    android:src="@drawable/project_time_setting"
 
-    <Button
-        android:id="@+id/showtimeslot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_below="@+id/setslotnotifsound"
+    />
 
-        android:text="Show all the time slots"
-        android:backgroundTint="@color/bright_purple_pink"
-        />
 
 
 

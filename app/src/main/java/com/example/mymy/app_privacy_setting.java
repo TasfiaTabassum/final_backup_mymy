@@ -109,11 +109,11 @@ public class app_privacy_setting extends AppCompatActivity {
 
 
 
-        List<String> list = SharedPrefUtil.getInstance(context).getListString();
+       // List<String> list = SharedPrefUtil.getInstance(context).getListString();
 
 
         List<PackageInfo> packageInfos = getPackageManager().getInstalledPackages(0);
-        printList(list);
+        //printList(list);
         printapplockunlockList(applockunlockstatename);
 
         // add to list of dataset
@@ -127,10 +127,11 @@ public class app_privacy_setting extends AppCompatActivity {
 
            // appModelList.add( new appModel(name, icon, 0, packname));
 
-            //
+            //!list.isEmpty() ||
+            //list.contains(packname) ||
 
-           if(!list.isEmpty() || !applockunlockstatename.isEmpty()){
-                if(list.contains(packname) || applockunlockstatename.contains(packname)){
+           if( !applockunlockstatename.isEmpty()){
+                if(applockunlockstatename.contains(packname)){
                     appModelList.add( new appModel(name, icon, 1, packname));
                     Log.d("tasfia" , "list empty na r list contains packname, status 1 , ei kaj cholee");
                 }

@@ -43,7 +43,7 @@ public class Locked_app_list_activity extends AppCompatActivity {
 
 
 
-        context = this ;
+       /* context = this ;
 
 
         recyclerView = findViewById(R.id.lockedapplist);
@@ -60,11 +60,11 @@ public class Locked_app_list_activity extends AppCompatActivity {
                 //getInstalledapps(context);
                 getLockedApps(getApplicationContext());
             }
-        });
+        });*/
 
 
     }
-
+/*
     @Override
     protected void onResume() {
         super.onResume();
@@ -84,7 +84,7 @@ public class Locked_app_list_activity extends AppCompatActivity {
 
 
 
-        List<String> list = SharedPrefUtil.getInstance(context).getListString();
+       // List<String> list = SharedPrefUtil.getInstance(context).getListString();
 
         List<PackageInfo> packageInfos = getPackageManager().getInstalledPackages(0);
 
@@ -115,6 +115,9 @@ public class Locked_app_list_activity extends AppCompatActivity {
         recyclerView.scheduleLayoutAnimation();
         progressDialog.dismiss();
     }
+
+
+ */
 
 
 

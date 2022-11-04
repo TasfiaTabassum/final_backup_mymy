@@ -21,7 +21,7 @@ public class appAdapter extends RecyclerView.Adapter<appAdapter.adapter_design_b
 
     List<appModel> appModels = new ArrayList<>();
     Context context ;
-    ArrayList<String> lockedApps = new ArrayList<>();
+    //ArrayList<String> lockedApps = new ArrayList<>();
     ArrayList<String> applockunlockstatename = new ArrayList<>();
 
     private SharedPrefUtil pref;
@@ -59,7 +59,8 @@ public class appAdapter extends RecyclerView.Adapter<appAdapter.adapter_design_b
         }
         else{
             holder.appstatus.setImageResource(R.drawable.lock);
-            lockedApps.add(app.getPackagename());
+            //lockedApps.add(app.getPackagename());
+            applockunlockstatename.add(app.getPackagename());
         }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -72,14 +73,14 @@ public class appAdapter extends RecyclerView.Adapter<appAdapter.adapter_design_b
                     app.setStatus(1);
                     holder.appstatus.setImageResource(R.drawable.lock);
                     Toast.makeText(context, app.getAppname()+" is locked!!", Toast.LENGTH_LONG).show();
-                    lockedApps.add(app.getPackagename());
+                   // lockedApps.add(app.getPackagename());
                     applockunlockstatename.add(app.getPackagename());
                    // applockunlockstatename.get(position).set ;
-                    SharedPrefUtil.getInstance(context).putListString(lockedApps);
+                    //SharedPrefUtil.getInstance(context).putListString(lockedApps);
 
                     ArrayList<String> state = SharedPrefUtil.getInstance(context).getState();
                     state.addAll(applockunlockstatename);
-                    Log.d("tasfia1" , "Locked apps" + lockedApps );
+                  //  Log.d("tasfia1" , "Locked apps" + lockedApps );
                     Log.d("tasfia1" , "Locked apps state" + applockunlockstatename );
                     Log.d("tasfia1" , "Locked apps state 2 " + state );
                     SharedPrefUtil.getInstance(context).saveState(state);
@@ -91,9 +92,9 @@ public class appAdapter extends RecyclerView.Adapter<appAdapter.adapter_design_b
                     app.setStatus(0);
                     holder.appstatus.setImageResource(R.drawable.unlock);
                     Toast.makeText(context, app.getAppname()+" is unlocked!!", Toast.LENGTH_LONG).show();
-                    lockedApps.remove(app.getPackagename());
+                   // lockedApps.remove(app.getPackagename());
                     applockunlockstatename.remove(app.getPackagename());
-                    SharedPrefUtil.getInstance(context).putListString(lockedApps);
+                   // SharedPrefUtil.getInstance(context).putListString(lockedApps);
                     SharedPrefUtil.getInstance(context).getState();
                     SharedPrefUtil.getInstance(context).saveState(applockunlockstatename);
 

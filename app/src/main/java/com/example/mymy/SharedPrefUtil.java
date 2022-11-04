@@ -22,7 +22,7 @@ public class SharedPrefUtil{
 
     Context context;
     private SharedPreferences.Editor mEditor ;
-    private List<String> lockedAppList;
+   // private List<String> lockedAppList;
     private ArrayList<String> applockunlockstatename ;
 
 
@@ -111,6 +111,13 @@ public class SharedPrefUtil{
             Log.d("wadith vai copy" , applockunlockstatename.get(i));
         }
     }
+
+
+
+    /*
+
+
+
     public void putListString(ArrayList<String> applockunlockstatename){
 
 
@@ -143,6 +150,12 @@ public class SharedPrefUtil{
         return temp;
 //        return lockedAppList;
     }
+
+
+
+
+
+     */
 
 
 }

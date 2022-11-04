@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.Task;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,8 +23,11 @@ public class app_privacy_setting extends AppCompatActivity {
 
     RecyclerView recyclerView ;
     List<appModel> appModelList = new ArrayList<>();
+    ArrayList<String> applockunlockstatename = new ArrayList<>();
     appAdapter adapter ;
     ProgressDialog progressDialog;
+
+    private SharedPrefUtil pref ;
 
 
     @Override
@@ -30,12 +35,22 @@ public class app_privacy_setting extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_privacy_setting);
 
+
+
+
+
+
+
+
         context = this ;
 
 
         recyclerView = findViewById(R.id.recycleapplist);
 
         adapter = new appAdapter(appModelList , this) ;
+
+        pref= new SharedPrefUtil(this);
+        applockunlockstatename = pref.getState();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
@@ -66,15 +81,40 @@ public class app_privacy_setting extends AppCompatActivity {
         progressDialog.setOnShowListener(null);
     }
 
+    private void printList(List<String> list){
+        for(int i=0; i < list.size(); i++)
+        {
+            Log.d("wadith vai" , list.get(i));
+        }
+    }
+
+    private void printapplockunlockList(ArrayList<String> applockunlockstatename){
+        for(int i=0; i < applockunlockstatename.size(); i++)
+        {
+            Log.d("wadith vai copy" , applockunlockstatename.get(i));
+        }
+    }
+
+    private void addpackagename(){
+        pref.saveState(applockunlockstatename);
+    }
+
+
 
     public void getInstalledapps(Context context){
+
+
+        pref= new SharedPrefUtil(this);
+        applockunlockstatename = pref.getState();
 
 
 
         List<String> list = SharedPrefUtil.getInstance(context).getListString();
 
-        List<PackageInfo> packageInfos = getPackageManager().getInstalledPackages(0);
 
+        List<PackageInfo> packageInfos = getPackageManager().getInstalledPackages(0);
+        printList(list);
+        printapplockunlockList(applockunlockstatename);
 
         // add to list of dataset
         for(int i = 0; i < packageInfos.size(); i++)
@@ -83,10 +123,14 @@ public class app_privacy_setting extends AppCompatActivity {
             Drawable icon = packageInfos.get(i).applicationInfo.loadIcon(getPackageManager());
             String packname = packageInfos.get(i).packageName;
 
-            //appModelList.add( new appModel(name, icon, 0, packname));
+//            applockunlockstatename.add
 
-            if(!list.isEmpty()){
-                if(list.contains(packname)){
+           // appModelList.add( new appModel(name, icon, 0, packname));
+
+            //
+
+           if(!list.isEmpty() || !applockunlockstatename.isEmpty()){
+                if(list.contains(packname) || applockunlockstatename.contains(packname)){
                     appModelList.add( new appModel(name, icon, 1, packname));
                     Log.d("tasfia" , "list empty na r list contains packname, status 1 , ei kaj cholee");
                 }

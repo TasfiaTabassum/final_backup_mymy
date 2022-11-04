@@ -38,6 +38,11 @@ public class MainActivity<noHistory, name, label, excludeFromRecents, activity> 
     String password ;
     static final String KEY = "pass" ;
 
+    private SharedPrefUtil pref ;
+
+
+
+
     Animation a1, a2 , a3 , a4 , a5 , a6 ;
 
 
@@ -56,6 +61,7 @@ public class MainActivity<noHistory, name, label, excludeFromRecents, activity> 
         signOut = findViewById(R.id.sign_out_btn);
         ShowLockedApps = findViewById(R.id.showLockedApps_cardview);
         SetUpdatePin = findViewById(R.id.setPin_cardview);
+
 
         a1 = AnimationUtils.loadAnimation(this , R.anim.anime_1) ;
         a2 = AnimationUtils.loadAnimation(this , R.anim.anime_2) ;

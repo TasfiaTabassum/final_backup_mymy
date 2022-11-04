@@ -20,6 +20,7 @@ public class SharedPrefUtil{
     private Gson gson;
 
 
+
     Context context;
     private SharedPreferences.Editor mEditor ;
    // private List<String> lockedAppList;

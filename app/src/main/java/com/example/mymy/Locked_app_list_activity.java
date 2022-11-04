@@ -22,6 +22,7 @@ public class Locked_app_list_activity extends AppCompatActivity {
 
     Context context ;
 
+
     RecyclerView recyclerView ;
     List<appModel> appModelList = new ArrayList<>();
     ArrayList<String> applockunlockstatename = new ArrayList<>();

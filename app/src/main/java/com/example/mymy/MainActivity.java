@@ -34,6 +34,7 @@ public class MainActivity<noHistory, name, label, excludeFromRecents, activity> 
     Button btnapplocker , btnapppermission , buttonprofile , btntimeslotsetting;
     Button signOut;
 
+
     Button btnSetPin ;
     String password ;
     static final String KEY = "pass" ;

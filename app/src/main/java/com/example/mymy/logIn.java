@@ -25,6 +25,7 @@ public class logIn extends AppCompatActivity {
 
     TextInputLayout eTemail;
     TextInputLayout etPassword;
+
     Button bton;
     FirebaseAuth mAuth;
     FirebaseAuth user;

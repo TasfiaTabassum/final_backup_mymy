@@ -19,6 +19,7 @@ import java.util.List;
 
 public class appAdapter extends RecyclerView.Adapter<appAdapter.adapter_design_backend> {
 
+
     List<appModel> appModels = new ArrayList<>();
     Context context ;
     //ArrayList<String> lockedApps = new ArrayList<>();

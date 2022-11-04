@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable;
 
 public class appModel {
 
+
     String appname;
     Drawable appicon;
     int status; //status is 0 then app is unlocked otherwise app is locked
